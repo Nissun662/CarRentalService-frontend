@@ -1,0 +1,40 @@
+<div>
+    <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+
+        <label>Fullname</label><br/>
+        <input type="text" id="fullName" formControlName="fullName" placeholder="Full name"/>
+        <br/><br/>
+
+        <label>Email</label><br/>
+        <input type="text" id="email" formControlName="email" placeholder="email"/>
+        <br/><br/>
+
+        <label>Username</label><br/>
+        <input type="text" id="userName" formControlName="userName" placeholder="User name"/>
+        <br/><br/>
+
+        <label>Password</label><br/>
+        <input type="password" id="password" formControlName="password" placeholder="Password"/>
+        <br/><br/>
+
+        <div formGroupName="address">
+            <label for="street">Street:</label><br/>
+            <input type="text" formControlName="street" id="street" placeholder="Street name"><br/><br/>
+        
+            <label for="city">City:</label><br/>
+            <input type="text" formControlName="city" id="city" placeholder="City"><br/><br/>
+        
+            <label for="state">State:</label><br/>
+            <input type="text" formControlName="state" id="state" placeholder="State"><br/><br/>
+        
+            <label for="zip">ZIP:</label><br/>
+            <input type="text" formControlName="zip" id="zip" placeholder=" Zip code"><br/><br/><br/>
+        
+            <label for="country">Country:</label><br/>
+            <input type="text" formControlName="country" id="country" placeholder="Country"><br/><br/>
+        </div>
+        
+        <button type="submit">Sign Up</button>
+    </form>
+</div>
+

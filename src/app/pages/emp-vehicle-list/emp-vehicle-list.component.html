@@ -1,0 +1,39 @@
+<button routerLink = "/new"> New Vehicel</button>
+ 
+<p>Vehicle List</p>
+<table style="border: 1px solid black; width: 100%;">
+    <thead>
+        <tr>
+            <th>Vehicel Id</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Vehicel Type</th>
+            <th>Mileage</th>
+            <th>Price Per Day</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let vehicle of vehicleList">
+            <td>{{vehicle.vehicleId}}</td>
+            <td>{{vehicle.make}}</td>
+            <td>{{vehicle.model}}</td>
+            <td>{{vehicle.year}}</td>
+            <td>{{vehicle.mileage}}</td>
+            <td>{{vehicle.vehicleType}}</td>
+            <td>{{vehicle.pricePerDay}}</td>
+            <td>{{vehicle.status}}</td>
+            
+            <td>
+                <button routerLink="/update/{{vehicle.vehicleId}}">Edit</button>
+                <button (click) = "deleteVehicle(vehicle.vehicleId)" style="margin-left: 20px;">Delete</button>
+              </td>
+              
+              
+              
+        </tr>
+    </tbody>
+</table>

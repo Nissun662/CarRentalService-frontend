@@ -1,0 +1,32 @@
+<p>Vehicle Details</p>
+
+<div> 
+    <form [formGroup]="newVehicleForm" (ngSubmit)="saveVehicle()">
+        <label>Make</label><br/>
+        <input type = "text" id ="make" formControlName="make" placeholder="make"/><br/><br/>
+
+        <label>Model</label><br/>
+        <input type = "text" id ="model" formControlName="model" placeholder="model"/><br/><br/>
+
+        <label>Year</label><br/>
+        <input type = "text" id ="year" formControlName="year" placeholder="year"/><br/><br/>
+
+        <label>Vehicle Type</label><br/>
+        <select id = "vehicleType" formControlName = "vehicleType">
+            <option value = "">Select Vehicle Type </option>
+            <option value = "Sedan"> Sedan</option>
+            <option value = "SUV">SUV</option>
+            <option value = "Coupe">Coupe</option>
+            <option value = "Convertible">Convertible</option>
+        </select><br/><br/>
+
+        <label>Mileage</label><br/>
+        <input type = "text" id ="mileage" formControlName="mileage" placeholder="mileage"/><br/><br/>
+
+        <label>Price Per Day</label><br/>
+        <input type = "text" id ="pricePerDay" formControlName="pricePerDay" placeholder="price per day"/><br/><br/>
+
+
+        <button type = "submit"> Save</button>
+    </form>
+</div>
