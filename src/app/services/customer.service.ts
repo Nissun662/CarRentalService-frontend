@@ -24,6 +24,14 @@ export class CustomerService {
 
   signUp(customer: Customer): Observable<string>{
     return this.http.post<string>(this.api, customer, {responseType: 'text' as 'json'} )
-
   }
+
+  updateCustomer(id: number, customer: Customer): Observable<string> {
+    return this.http.patch<string>(this.api.concat('/').concat(id+ ''), customer, {responseType: 'text' as 'json'});
+  }
+
+  getCustomerById(id: number): Observable<Customer> {
+    return this.http.get<Customer>(this.api + '/' + id);
+  }
+  
 }

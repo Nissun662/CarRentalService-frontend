@@ -29,11 +29,14 @@ export class LoginComponent implements OnInit{
 
   login(): void {
     const user = this.loginForm.value;
+
+
     //console.log(user);
     this.userService.login(user).subscribe((user: User) => {
+      localStorage.setItem('userId', user.userId.toString());
       if(user.role === 'EMPLOYEE'){   // put == EMPLOYEE/CUSTOMER
         //alert('Login success')
-        this.router.navigate(['vechile-list'])
+        this.router.navigate(['vehicle-list'])
         
       } else if(user.role === 'CUSTOMER') {
         this.router.navigate(['list'])

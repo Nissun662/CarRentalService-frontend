@@ -12,7 +12,7 @@ export class UserService {
 
   httpOptions = {
     headers: new HttpHeaders({
-      'Contetn-Type': 'application/json'
+      'Content-Type': 'application/json'
     })
   }
 
@@ -21,4 +21,11 @@ export class UserService {
   login(user: User): Observable<User> {
     return this.http.post<User>(this.api, user, this.httpOptions)
   }
+
+  // Add a method to get the user ID
+  getUserId(): Observable<number> {
+    // Assuming you have an API endpoint to get the user ID
+    const userIdApi = 'http://localhost:8080/api/v1/user/logins';
+    return this.http.get<number>(userIdApi);
+}
 }

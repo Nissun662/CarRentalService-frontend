@@ -11,6 +11,7 @@ import { Vehicle } from '../../models/vehicle';
   templateUrl: './new-vehicle.component.html',
   styleUrl: './new-vehicle.component.scss'
 })
+
 export class NewVehicleComponent implements OnInit{
 
   newVehicleForm: FormGroup;
@@ -45,13 +46,14 @@ private router: Router) {}
     if(this.vehicleId){    
       this.vehicleService.updateVehicle(this.vehicleId, vehicleData).subscribe((result: string) => {
         alert(result);
-        this.router.navigate(['vechile-list']);
+        this.router.navigate(['vehicle-list']);
       })
     } else {
     this.vehicleService.saveVehicle(vehicleData).subscribe((result: string) => {
       alert(result);
+      this.router.navigate(['vehicle-list']);
     })
-  }
+  };
   }
 
 }

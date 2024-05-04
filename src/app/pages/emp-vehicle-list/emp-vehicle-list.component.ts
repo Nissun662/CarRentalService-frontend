@@ -3,7 +3,6 @@ import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Vehicle } from '../../models/vehicle';
 import { VehicleService } from '../../services/vehicle.service';
-import { Observable } from 'rxjs';
 
 
 
@@ -26,7 +25,7 @@ export class EmpVehicleListComponent implements OnInit{
 
   getAllVehicles(): void{
     this.vehicleService.getVehicleList().subscribe((vehicleList: Vehicle[]) => {
-      console.log(vehicleList); //coment later
+      //console.log(vehicleList); //coment later
       this.vehicleList = vehicleList;
     });
   }
