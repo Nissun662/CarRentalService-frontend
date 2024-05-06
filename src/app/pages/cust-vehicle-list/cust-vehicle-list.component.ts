@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Vehicle } from '../../models/vehicle';
 import { VehicleService } from '../../services/vehicle.service';
-import { Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { Customer } from '../../models/customer';
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormsModule } from '@angular/forms';
 import { CustomerService } from '../../services/customer.service';
 import { ReservationService } from '../../services/reservation.service';
+import { Reservation } from '../../models/reservation';
 
 @Component({
   selector: 'app-cust-vehicle-list',
@@ -21,13 +22,13 @@ export class CustVehicleListComponent implements OnInit{
   customerFullName: string;
   customerEmail: string;
   cusId: number;
+  reservation: Reservation;
 
   
 
   constructor(private vehicleService: VehicleService,
     private router: Router,
-  private customerService: CustomerService,
-private reservationService: ReservationService ) {}
+    private customerService: CustomerService ) {}
 
   ngOnInit(): void {
     // Fetch vehicle list
@@ -97,11 +98,8 @@ private reservationService: ReservationService ) {}
 
 }
 
-editReservation(): void {
-
-  
-
-  this.router.navigate(['/edit-reservation']);
+editReservation(reservationId: number): void {
+  this.router.navigate(['/edit-reservation'], {queryParams: {reservationId: reservationId}});
  }
 
 }

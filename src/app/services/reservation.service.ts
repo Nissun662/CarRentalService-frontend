@@ -28,7 +28,7 @@ export class ReservationService {
   }
 
   updateReservation(reservationId: number, reservation: Reservation): Observable<string> {
-    return this.http.patch<string>(this.api.concat('/').concat(reservationId+ ''), reservation, {responseType: 'test' as 'json'});
+    return this.http.patch<string>(this.api.concat('/').concat(reservationId+ ''), reservation, {responseType: 'text' as 'json'});
   }
 
   deleteReservation(reservationId: number): Observable<string>{
