@@ -1,0 +1,74 @@
+<h1>Reservation Details</h1>
+
+<form [formGroup]="reservationForm" (ngSubmit)="submitReservation()">
+    <div>
+      <label for="reservationStartDate" style ="margin-right: 10px;">Reservation Start Date:</label>
+      <input type="date" id="reservationStartDate" formControlName="reservationStartDate">
+    </div><br/>
+    
+    <div>
+      <label for="noOfDays" style ="margin-right: 10px;"> Number of Days:</label>
+      <input type="number" id="noOfDays" formControlName="noOfDays">
+    </div><br/>
+    
+    <div>
+      <label for="reservationEndDate" style ="margin-right: 10px;">Reservation End Date:</label>
+      <input type="date" id="reservationEndDate" formControlName="reservationEndDate">
+    </div><br/>
+  
+    <div formGroupName="customer">
+      <label for="cusId">Customer Id:</label>
+      <input type="number" id ="customer id" formControlName = "cusId"><br/><br/>
+      <label for="fullName">Full Name:</label>
+      <input type="text" id="fullName" formControlName="fullName"><br/><br/>
+      <label for="email">Email:</label>
+      <input type="email" id="email" formControlName="email">
+    </div><br/>
+
+    <div formGroupName="vehicle">
+      <label> Vehicle Id:</label>
+      <input type="number" formControlName="vehicleId" readonly /><br /><br />
+    
+      <label>Make</label><br />
+      <input type="text" formControlName="make" readonly /><br /><br />
+    
+      <label>Model</label><br />
+      <input type="text" formControlName="model" readonly /><br /><br />
+    
+      <label>Year</label><br />
+      <input type="text" formControlName="year" readonly /><br /><br />
+    
+      <label>Vehicle Type</label><br />
+      <select formControlName="vehicleType">
+        <option value="">Select Vehicle Type </option>
+        <option value="Sedan">Sedan</option>
+        <option value="SUV">SUV</option>
+        <option value="Coupe">Coupe</option>
+        <option value="Convertible">Convertible</option>
+      </select><br /><br />
+    
+      <label>Mileage</label><br />
+      <input type="text" formControlName="mileage" readonly /><br /><br />
+    
+      <label>Price Per Day</label><br />
+      <input type="text" formControlName="pricePerDay" readonly /><br /><br />
+    </div>
+    
+  
+    <!-- <div formGroupName="vehicle">
+      <label for="id">Vehicle ID:</label>
+      <input type="text" id="id" formControlName="id">
+    </div><br/> -->
+  
+    <div formGroupName="payment">
+      <label for="creditCardNumber">Credit Card Number:</label>
+      <input type="text" id="creditCardNumber" formControlName="creditCardNumber"><br/><br/>
+      <label for="expiration">Expiration Date:</label>
+      <input type="text" id="expiration" formControlName="expiration" placeholder="mm/yy"><br/><br/>
+      <label for="cvv">CVV:</label>
+      <input type="text" id="cvv" formControlName="cvv"><br/><br/>
+    </div>
+  
+    <button type="submit">Submit</button>
+  </form>
+  

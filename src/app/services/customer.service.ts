@@ -12,7 +12,7 @@ export class CustomerService {
 
   httpOptions = {
     headers: new HttpHeaders({
-      'Contetn-Type': 'application/json'
+      'Content-Type': 'application/json'
     })
   }
  
@@ -33,5 +33,9 @@ export class CustomerService {
   getCustomerById(id: number): Observable<Customer> {
     return this.http.get<Customer>(this.api + '/' + id);
   }
+
+  // getCustomerById(id: string): Observable<Customer> {
+  //   return this.http.get<Customer>(`${this.api}/${id}`);
+  // }
   
 }
