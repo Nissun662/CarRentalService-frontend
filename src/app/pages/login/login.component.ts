@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit{
     //console.log(user);
     this.userService.login(user).subscribe((user: User) => {
       localStorage.setItem('userId', user.userId.toString());
+      localStorage.setItem('role', user.role);
       if(user.role === 'EMPLOYEE'){   // put == EMPLOYEE/CUSTOMER
         //alert('Login success')
         this.router.navigate(['vehicle-list'])
@@ -47,10 +48,4 @@ export class LoginComponent implements OnInit{
     
 
   }
-
-
-
-
-  
-
 }

@@ -28,7 +28,7 @@
             <td>{{ vehicle.status }}</td>
             <td><button (click)="reserve(vehicle.vehicleId)">Reserve</button></td>
             <td> <button (click)="editReservation(vehicle.vehicleId)"> Edit </button></td>
-            <td> <button> Delete</button></td>
+            <td> <button class="btn btn-danger" (click)="deleteReservation()"> Delete</button></td>
         </tr>
     </tbody>
 </table>

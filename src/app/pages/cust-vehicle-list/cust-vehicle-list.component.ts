@@ -1,13 +1,13 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Vehicle } from '../../models/vehicle';
 import { VehicleService } from '../../services/vehicle.service';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { Customer } from '../../models/customer';
-import { FormBuilder, FormsModule } from '@angular/forms';
+import { FormGroup, FormsModule } from '@angular/forms';
 import { CustomerService } from '../../services/customer.service';
-import { ReservationService } from '../../services/reservation.service';
 import { Reservation } from '../../models/reservation';
+import { ReservationService } from '../../services/reservation.service';
 
 @Component({
   selector: 'app-cust-vehicle-list',
@@ -18,17 +18,21 @@ import { Reservation } from '../../models/reservation';
 })
 export class CustVehicleListComponent implements OnInit{
 
+  reservationForm: FormGroup;
+
   vehicleList: Vehicle[] = [];
   customerFullName: string;
   customerEmail: string;
   cusId: number;
   reservation: Reservation;
+  reservationId: number;
 
   
 
   constructor(private vehicleService: VehicleService,
     private router: Router,
-    private customerService: CustomerService ) {}
+    private customerService: CustomerService,
+    private reservationService: ReservationService) {}
 
   ngOnInit(): void {
     // Fetch vehicle list
@@ -36,17 +40,28 @@ export class CustVehicleListComponent implements OnInit{
       this.vehicleList = vehicleList;
     });
   
-    // Fetch customer details only if localStorage is available
-    if (typeof localStorage !== 'undefined') {
-      const userId = localStorage.getItem('userId');
-      if (userId) {
-        this.customerService.getCustomerById(parseInt(userId)).subscribe((customer) => {
-          this.customerFullName = customer.fullName;
-          this.customerEmail = customer.email;
-        });
-      }
-    }
+ // Fetch customer details only if localStorage is available
+ if (typeof localStorage !== 'undefined') {
+  const userId = localStorage.getItem('userId');
+  if (userId) {
+    this.customerService.getCustomerById(parseInt(userId)).subscribe((customer) => {
+      this.customerFullName = customer.fullName;
+      this.customerEmail = customer.email;
+
+      // Fetch the current reservation of the customer
+      this.reservationService.getReservation(parseInt(userId)).subscribe((reservations) => {
+        // Assuming there's only one reservation per customer
+        this.reservation = reservations;
+        localStorage.setItem('reservationId', this.reservation.reservationId.toString());
+      }, (error) => {
+        console.error(error);
+        //alert('Failed to fetch reservation.');
+      });
+
+    });
   }
+}
+}
   
 
   editCustomerDetails(): void {
@@ -101,5 +116,22 @@ export class CustVehicleListComponent implements OnInit{
 editReservation(reservationId: number): void {
   this.router.navigate(['/edit-reservation'], {queryParams: {reservationId: reservationId}});
  }
+
+ deleteReservation(): void {
+  if (!this.reservation || !this.reservation.reservationId) {
+    alert('No reservation to delete');
+    return;
+  }
+
+  const reservationId = this.reservation.reservationId; // Get the reservation ID
+
+  this.reservationService.deleteReservation(reservationId).subscribe(() => {
+    alert('Reservation deleted successfully!');
+    // Reload the page or fetch the updated reservation list
+  }, (error) => {
+    console.error(error);
+    alert('Failed to delete reservation.');
+  });
+}
 
 }

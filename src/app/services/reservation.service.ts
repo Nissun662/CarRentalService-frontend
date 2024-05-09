@@ -1,7 +1,7 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Reservation } from '../models/reservation';
-import { Observable } from 'rxjs';
+import { Observable, catchError, of, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -31,8 +31,19 @@ export class ReservationService {
     return this.http.patch<string>(this.api.concat('/').concat(reservationId+ ''), reservation, {responseType: 'text' as 'json'});
   }
 
-  deleteReservation(reservationId: number): Observable<string>{
-    return this.http.delete<string>(this.api.concat('/').concat(reservationId+''));
+  deleteReservation(reservationId: number): Observable<string> {
+    return this.http.delete<string>(`${this.api}/${reservationId}`).pipe(
+      catchError((error: HttpErrorResponse) => {
+        if (error.status === 200) {
+          return of('Reservation deleted successfully.'); // Return the success message
+        }
+        return throwError('Failed to delete reservation.'); // Otherwise, throw an error
+      })
+    );
+  }
+
+  getAllReservations(): Observable<Reservation[]> {
+    return this.http.get<Reservation[]>(this.api)
   }
   
 

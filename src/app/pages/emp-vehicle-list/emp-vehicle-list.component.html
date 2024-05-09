@@ -28,12 +28,13 @@
             <td>{{vehicle.status}}</td>
             
             <td>
-                <button routerLink="/update/{{vehicle.vehicleId}}">Edit</button>
-                <button (click) = "deleteVehicle(vehicle.vehicleId)" style="margin-left: 20px;">Delete</button>
-              </td>
-              
-              
-              
+                <button routerLink="/update/{{vehicle.vehicleId}}">Edit Vehicle</button>
+                <button (click) = "deleteVehicle(vehicle.vehicleId)" style="margin-left: 20px;">Delete Vehicle</button>
+            </td>
         </tr>
     </tbody>
 </table>
+
+<br/><br/>
+
+<button routerLink="/emp-edit-reservation">Edit reservation</button>

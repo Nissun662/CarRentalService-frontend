@@ -8,13 +8,15 @@
     
     <div>
       <label for="noOfDays" style ="margin-right: 10px;"> Number of Days:</label>
-      <input type="number" id="noOfDays" formControlName="noOfDays">
+      <input type="number" id="noOfDays" formControlName="noOfDays" (input)="updateEndDate()">
     </div><br/>
     
     <div>
       <label for="reservationEndDate" style ="margin-right: 10px;">Reservation End Date:</label>
       <input type="date" id="reservationEndDate" formControlName="reservationEndDate">
     </div><br/>
+
+
   
     <div formGroupName="customer">
       <label for="cusId">Customer Id:</label>
@@ -51,7 +53,7 @@
       <input type="text" formControlName="mileage" readonly /><br /><br />
     
       <label>Price Per Day</label><br />
-      <input type="text" formControlName="pricePerDay" readonly /><br /><br />
+      <input type="hidden" formControlName="pricePerDay" readonly /><br /><br />
     </div>
     
     <div formGroupName="payment">

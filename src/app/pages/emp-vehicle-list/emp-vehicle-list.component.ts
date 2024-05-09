@@ -17,7 +17,7 @@ export class EmpVehicleListComponent implements OnInit{
 
   vehicleList: Vehicle[] = [];
 
-  constructor(private vehicleService: VehicleService) {}
+  constructor(private vehicleService: VehicleService,) {}
 
   ngOnInit(): void {
     this.getAllVehicles();

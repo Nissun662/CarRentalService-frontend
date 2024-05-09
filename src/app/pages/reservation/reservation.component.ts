@@ -122,10 +122,6 @@ private updateEndDate(): void {
 
 submitReservation(): void {
   if (this.reservationForm.valid) {
-
-    //
-    //
-    //
     const reservationData: Reservation = this.reservationForm.value;
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
 
