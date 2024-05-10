@@ -1,32 +1,51 @@
-<p>Vehicle Details</p>
-
-<div> 
-    <form [formGroup]="newVehicleForm" (ngSubmit)="saveVehicle()">
-        <label>Make</label><br/>
-        <input type = "text" id ="make" formControlName="make" placeholder="make"/><br/><br/>
-
-        <label>Model</label><br/>
-        <input type = "text" id ="model" formControlName="model" placeholder="model"/><br/><br/>
-
-        <label>Year</label><br/>
-        <input type = "text" id ="year" formControlName="year" placeholder="year"/><br/><br/>
-
-        <label>Vehicle Type</label><br/>
-        <select id = "vehicleType" formControlName = "vehicleType">
-            <option value = "">Select Vehicle Type </option>
-            <option value = "Sedan"> Sedan</option>
-            <option value = "SUV">SUV</option>
-            <option value = "Coupe">Coupe</option>
-            <option value = "Convertible">Convertible</option>
-        </select><br/><br/>
-
-        <label>Mileage</label><br/>
-        <input type = "text" id ="mileage" formControlName="mileage" placeholder="mileage"/><br/><br/>
-
-        <label>Price Per Day</label><br/>
-        <input type = "text" id ="pricePerDay" formControlName="pricePerDay" placeholder="price per day"/><br/><br/>
-
-
-        <button type = "submit"> Save</button>
-    </form>
+<div style="background-image: url('/assets/images/editVehicle.jpeg');
+            background-size: cover; background-position: center; min-height: 100vh; display: flex;
+            justify-content: center; align-items: center; flex-direction: column;">
+            
+  <div class="container mt-5">
+    <h2 style="color: white;">Vehicle Details</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <form [formGroup]="newVehicleForm" (ngSubmit)="saveVehicle()">
+          <div class="mb-3">
+            <label for="make" class="form-label" style="color: white;">Make</label>
+            <input type="text" id="make" formControlName="make" class="form-control transparent-input" placeholder="Make">
+          </div>
+  
+          <div class="mb-3">
+            <label for="model" class="form-label" style="color: white;">Model</label>
+            <input type="text" id="model" formControlName="model" class="form-control transparent-input" placeholder="Model">
+          </div>
+  
+          <div class="mb-3">
+            <label for="year" class="form-label" style="color: white;">Year</label>
+            <input type="text" id="year" formControlName="year" class="form-control transparent-input" placeholder="Year">
+          </div>
+  
+          <div class="mb-3">
+            <label for="vehicleType" class="form-label" style="color: white;">Vehicle Type</label>
+            <select id="vehicleType" formControlName="vehicleType" class="form-select transparent-input">
+              <option value="">Select Vehicle Type</option>
+              <option value="Sedan">Sedan</option>
+              <option value="SUV">SUV</option>
+              <option value="Coupe">Coupe</option>
+              <option value="Convertible">Convertible</option>
+            </select>
+          </div>
+  
+          <div class="mb-3">
+            <label for="mileage" class="form-label" style="color: white;">Mileage</label>
+            <input type="text" id="mileage" formControlName="mileage" class="form-control transparent-input" placeholder="Mileage">
+          </div>
+  
+          <div class="mb-3">
+            <label for="pricePerDay" class="form-label" style="color: white;">Price Per Day</label>
+            <input type="text" id="pricePerDay" formControlName="pricePerDay" class="form-control transparent-input" placeholder="Price Per Day">
+          </div>
+  
+          <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>

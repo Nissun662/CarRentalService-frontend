@@ -45,7 +45,4 @@ export class ReservationService {
   getAllReservations(): Observable<Reservation[]> {
     return this.http.get<Reservation[]>(this.api)
   }
-  
-
-
 }

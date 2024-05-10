@@ -1,37 +1,38 @@
-<p>Reservation List</p>
-<table style="border: 1px solid black; width: 100%;">
-  <thead>
-    <tr>
-      <th>Reservation ID</th>
-      <th>Customer ID</th>
-      <th>Vehicle ID</th>
-      <th>Payment ID</th>
-      <th>Start Date</th>
-      <th>End Date</th>
-      <th>Total Price</th>
-      <th>No of days</th>
-      <th>Sub Total</th>
-      <th>Status</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let reservation of reservations">
-      <td>{{ reservation.reservationId }}</td>
-      <td>{{ reservation.customer.cusId }}</td>
-      <td>{{ reservation.vehicle.vehicleId }}</td>
-      <td>{{ reservation.payment.id }}</td>
-      <td>{{ reservation.reservationStartDate }}</td>
-      <td>{{ reservation.reservationEndDate }}</td>
-      <td>{{ reservation.totalPrice }}</td>
-      <td>{{ reservation.noOfDays }}</td>
-      <td>{{ reservation.subTotal }}</td>
-      <td>{{ reservation.status }}</td>
-
-      <td>
-        <button (click)="editReservation(reservation.reservationId)">Edit</button>
-        <button style="margin-left: 20px;" (click)="deleteReservation(reservation.reservationId)">Delete</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="container mt-5">
+  <h2>Reservation List</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Reservation ID</th>
+        <th>Customer ID</th>
+        <th>Vehicle ID</th>
+        <th>Payment ID</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Total Price</th>
+        <th>No of days</th>
+        <th>Sub Total</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reservation of reservations">
+        <td>{{ reservation.reservationId }}</td>
+        <td>{{ reservation.customer.cusId }}</td>
+        <td>{{ reservation.vehicle.vehicleId }}</td>
+        <td>{{ reservation.payment.id }}</td>
+        <td>{{ reservation.reservationStartDate }}</td>
+        <td>{{ reservation.reservationEndDate }}</td>
+        <td>{{ reservation.totalPrice }}</td>
+        <td>{{ reservation.noOfDays }}</td>
+        <td>{{ reservation.subTotal }}</td>
+        <td>{{ reservation.status }}</td>
+        <td>
+          <button class="btn btn-primary btn-sm" (click)="editReservation(reservation.reservationId)">Edit</button>
+          <button class="btn btn-danger btn-sm" (click)="deleteReservation(reservation.reservationId)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

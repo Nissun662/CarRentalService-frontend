@@ -1,8 +1,17 @@
-<button (click)="editCustomerDetails()"> Edit Customer Details </button>
+<div style="background-image: url('/assets/images/customerVehicleList.jpeg');
+            background-size: cover; background-position: center; min-height: 100vh; display: flex;
+            justify-content: center; align-items: center; flex-direction: column;">
+
+<br/><br/>
+<div style="position: absolute; left: 215px; top: 20px;">
+    <button class="btn btn-success" (click)="editCustomerDetails()"> Edit Customer Details </button>
+</div>
+<br/><br/>
  
-<p>Vehicle List</p>
-<table style="border: 1px solid black; width: 100%;">
-    <thead>
+<div class="table-container">
+    <h1 style="color: rgb(9, 107, 97)">Vehicle List</h1>
+    <table class="table table-transparent table-striped table-bordered">
+    <thead class="thead-dark">
         <tr>
             <th>Vehicle Id</th>
             <th>Make</th>
@@ -26,9 +35,15 @@
             <td>{{ vehicle.mileage }}</td>
             <td>{{ vehicle.pricePerDay }}</td>
             <td>{{ vehicle.status }}</td>
-            <td><button (click)="reserve(vehicle.vehicleId)">Reserve</button></td>
-            <td> <button (click)="editReservation(vehicle.vehicleId)"> Edit </button></td>
-            <td> <button class="btn btn-danger" (click)="deleteReservation()"> Delete</button></td>
+
+            <!-- Action column with buttons -->
+            <td>
+                <button class="btn btn-primary btn-rounded" style="margin-right: 10px;" (click)="reserve(vehicle.vehicleId)">Reserve</button>
+                <button class="btn btn-success btn-rounded" style="margin-right: 10px;" (click)="editReservation(vehicle.vehicleId)">Edit</button>
+                <button class="btn btn-danger btn-rounded" style="margin-right: 10px;" (click)="deleteReservation()">Delete</button>
+            </td>
         </tr>
     </tbody>
 </table>
+</div>
+</div>

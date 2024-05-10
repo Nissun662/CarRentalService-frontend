@@ -1,0 +1,11 @@
+.transparent-input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    color: white;
+  }
+  
+  .transparent-input::placeholder {
+    color: white;
+  }
+  

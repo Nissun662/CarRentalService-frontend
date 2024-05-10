@@ -30,9 +30,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "/Users/nishan/Desktop/Diyo Tech/Car Rental Service/car-rental-service-frontend/node_modules/bootstrap/dist/css/bootstrap.min.css"
+
             ],
-            "scripts": [],
+            "scripts": [
+              "/Users/nishan/Desktop/Diyo Tech/Car Rental Service/car-rental-service-frontend/node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {

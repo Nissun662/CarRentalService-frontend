@@ -9,7 +9,7 @@ import { User } from '../../models/user';
   standalone: true,
   imports: [FormsModule, ReactiveFormsModule, RouterLink],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit{
 
@@ -30,7 +30,6 @@ export class LoginComponent implements OnInit{
   login(): void {
     const user = this.loginForm.value;
 
-
     //console.log(user);
     this.userService.login(user).subscribe((user: User) => {
       localStorage.setItem('userId', user.userId.toString());
@@ -45,7 +44,5 @@ export class LoginComponent implements OnInit{
         alert('Invalid username or passoword');
       }
     })
-    
-
   }
 }

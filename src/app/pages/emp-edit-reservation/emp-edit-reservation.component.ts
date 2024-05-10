@@ -42,8 +42,4 @@ export class EmpEditReservationComponent implements OnInit {
   editReservation(reservationId: number): void {
     this.router.navigate(['/edit-reservation'], { queryParams: {reservationId} });
   }
-
-
-  
-
 }

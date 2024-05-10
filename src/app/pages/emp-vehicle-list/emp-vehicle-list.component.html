@@ -1,40 +1,40 @@
-<button routerLink = "/new"> New Vehicel</button>
- 
-<p>Vehicle List</p>
-<table style="border: 1px solid black; width: 100%;">
-    <thead>
+<div style="background-image: url('/assets/images/EmpVehicleList.jpeg');
+            background-size: cover; background-position: center; min-height: 100vh; display: flex;
+            justify-content: center; align-items: center; flex-direction: column;">
+
+  <div class="container mt-5">
+    <button class="btn btn-primary mb-3" routerLink="/new">New Vehicle</button>
+    <h2 style="color: white;">Vehicle List</h2>
+    <table class="table table-striped" style="background-color: transparent;">
+      <thead style="opacity: 0.8;">
         <tr>
-            <th>Vehicel Id</th>
-            <th>Make</th>
-            <th>Model</th>
-            <th>Year</th>
-            <th>Vehicel Type</th>
-            <th>Mileage</th>
-            <th>Price Per Day</th>
-            <th>Status</th>
-            <th>Actions</th>
+          <th>Vehicle Id</th>
+          <th>Make</th>
+          <th>Model</th>
+          <th>Year</th>
+          <th>Mileage</th>
+          <th>Vehicle Type</th>
+          <th>Price Per Day</th>
+          <th>Status</th>
+          <th>Actions</th>
         </tr>
-    </thead>
-
-    <tbody>
+      </thead>
+      <tbody style="opacity: 0.7;">
         <tr *ngFor="let vehicle of vehicleList">
-            <td>{{vehicle.vehicleId}}</td>
-            <td>{{vehicle.make}}</td>
-            <td>{{vehicle.model}}</td>
-            <td>{{vehicle.year}}</td>
-            <td>{{vehicle.mileage}}</td>
-            <td>{{vehicle.vehicleType}}</td>
-            <td>{{vehicle.pricePerDay}}</td>
-            <td>{{vehicle.status}}</td>
-            
-            <td>
-                <button routerLink="/update/{{vehicle.vehicleId}}">Edit Vehicle</button>
-                <button (click) = "deleteVehicle(vehicle.vehicleId)" style="margin-left: 20px;">Delete Vehicle</button>
-            </td>
+          <td>{{ vehicle.vehicleId }}</td>
+          <td>{{ vehicle.make }}</td>
+          <td>{{ vehicle.model }}</td>
+          <td>{{ vehicle.year }}</td>
+          <td>{{ vehicle.mileage }}</td>
+          <td>{{ vehicle.vehicleType }}</td>
+          <td>{{ vehicle.pricePerDay }}</td>
+          <td>{{ vehicle.status }}</td>
+          <td>
+            <button class="btn btn-primary btn-sm" routerLink="/update/{{ vehicle.vehicleId }}">Edit Vehicle</button>
+            <button class="btn btn-danger btn-sm" (click)="deleteVehicle(vehicle.vehicleId)" style="margin-left: 10px;">Delete Vehicle</button>
+          </td>
         </tr>
-    </tbody>
-</table>
-
-<br/><br/>
-
-<button routerLink="/emp-edit-reservation">Edit reservation</button>
+      </tbody>
+    </table>
+  </div>
+  <button class="btn btn-primary" routerLink="/emp-edit-reservation" style="margin-right: 1150px;">Edit Reservation

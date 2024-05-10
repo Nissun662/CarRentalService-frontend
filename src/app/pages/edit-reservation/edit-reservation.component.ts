@@ -101,10 +101,6 @@ export class EditReservationComponent implements OnInit {
     }
   }
   
-  
-  
-  
-
   updateEndDate(): void {
     //console.log('Updating end date...');
     const startDate = this.reservationForm.get('reservationStartDate').value;

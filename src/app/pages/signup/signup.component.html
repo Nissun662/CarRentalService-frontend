@@ -1,40 +1,59 @@
-<div>
-    <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+    <div style="background-image: url('/assets/images/signupPageImage.jpeg');
+            background-size: cover; background-position: center; min-height: 100vh; display: flex;
+            justify-content: center; align-items: center; flex-direction: column;">
 
-        <label>Fullname</label><br/>
-        <input type="text" id="fullName" formControlName="fullName" placeholder="Full name"/>
-        <br/><br/>
+    <form [formGroup]="signUpForm" (ngSubmit)="signUp()" class="row g-3">
 
-        <label>Email</label><br/>
-        <input type="text" id="email" formControlName="email" placeholder="email"/>
-        <br/><br/>
-
-        <label>Username</label><br/>
-        <input type="text" id="userName" formControlName="userName" placeholder="User name"/>
-        <br/><br/>
-
-        <label>Password</label><br/>
-        <input type="password" id="password" formControlName="password" placeholder="Password"/>
-        <br/><br/>
-
-        <div formGroupName="address">
-            <label for="street">Street:</label><br/>
-            <input type="text" formControlName="street" id="street" placeholder="Street name"><br/><br/>
-        
-            <label for="city">City:</label><br/>
-            <input type="text" formControlName="city" id="city" placeholder="City"><br/><br/>
-        
-            <label for="state">State:</label><br/>
-            <input type="text" formControlName="state" id="state" placeholder="State"><br/><br/>
-        
-            <label for="zip">ZIP:</label><br/>
-            <input type="text" formControlName="zip" id="zip" placeholder=" Zip code"><br/><br/><br/>
-        
-            <label for="country">Country:</label><br/>
-            <input type="text" formControlName="country" id="country" placeholder="Country"><br/><br/>
+        <div class="col-md-6">
+            <label for="fullName" class="form-label fields">Full Name</label>
+            <input type="text" class="form-control" id="fullName" formControlName="fullName" placeholder="Full Name" required>
         </div>
-        
-        <button type="submit">Sign Up</button>
+
+        <div class="col-md-6">
+            <label for="email" class="form-label fields">Email</label>
+            <input type="email" class="form-control" id="email" formControlName="email" placeholder="Email" required>
+        </div>
+
+        <div class="col-md-6">
+            <label for="userName" class="form-label fields">Username</label>
+            <input type="text" class="form-control" id="userName" formControlName="userName" placeholder="Username" required>
+        </div>
+
+        <div class="col-md-6">
+            <label for="password" class="form-label fields">Password</label>
+            <input type="password" class="form-control" id="password" formControlName="password" placeholder="Password" required>
+        </div>
+
+        <div formGroupName = "address">
+        <div class="col-12">
+            <label for="street" class="form-label fields">Street</label>
+            <input type="text" class="form-control" id="street" formControlName="street" placeholder="Street" style="width: 400px;" required>
+        </div>
+
+        <div class="col-md-6">
+            <label for="city" class="form-label fields">City</label>
+            <input type="text" class="form-control" id="city" formControlName="city" placeholder="City" style="width: 300px;" required>
+        </div>
+
+        <div class="col-md-4">
+            <label for="state" class="form-label fields">State</label>
+            <input type="text" class="form-control" id="state" formControlName="state" placeholder="State" style="width: 200px;" required>
+        </div>
+
+        <div class="col-md-2">
+            <label for="zip" class="form-label fields">Zip</label>
+            <input type="text" class="form-control" id="zip" formControlName="zip" placeholder="Zip" style="width: 100px;" required>
+        </div>
+
+        <div class="col-md-6">
+            <label for="country" class="form-label fields">Country</label>
+            <input type="text" class="form-control" id="country" formControlName="country" placeholder="Country" style="width: 100px;" required>
+        </div>
+    </div>
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+        </div>
+
     </form>
 </div>
-

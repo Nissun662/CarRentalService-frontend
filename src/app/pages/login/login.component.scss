@@ -1,0 +1,39 @@
+
+.welcome-message {
+    color: rgb(231, 255, 47);
+    font-style: italic;
+    text-align: center;
+    opacity: 0.8;
+}
+
+
+.welcome-title {
+    color: rgb(11, 239, 235);
+    font-weight: bold;
+    font-style: oblique;
+    text-align: center;
+    opacity: 0.8;
+}
+
+.fields {
+    color: white;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.welcome-message-container {
+    max-width: 800px; 
+    margin: 0 auto;
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+
+
+
+

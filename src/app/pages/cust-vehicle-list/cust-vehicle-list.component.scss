@@ -1,0 +1,14 @@
+/* Adjust the opacity of the entire table */
+.table-container {
+    background-color: rgba(255, 255, 255, 0.5); /* Adjust the color and opacity as needed */
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+    backdrop-filter: blur(1px); /* Adds a blur effect to the background */
+}
+
+/* Adjust the opacity of the table cells */
+.table tbody tr td,
+.table thead tr th {
+    background-color: rgba(223, 206, 206, 0.5); /* Adjust the color and opacity as needed */
+}

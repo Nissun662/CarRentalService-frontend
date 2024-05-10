@@ -1,18 +1,40 @@
-<div>
-    <form [formGroup] = "loginForm" (ngSubmit) = "login()">
 
-        <label>Username</label>
-        <br/>
-        <input type = "text" id = "userName" formControlName = "userName" placeholder="Username"/>
-        <br/><br/>
 
-        <label>Pasword</label>
-        <br/>
-        <input type = "password" id = "password" formControlName = "password" placeholder="Password"/>
-        <br/><br/>
+<div style="background-image: url('/assets/images/HomePageImage.jpg');
+            background-size: cover; background-position: center; min-height: 100vh; display: flex;
+            justify-content: center; align-items: center; flex-direction: column;">
 
-        <button type = "submit">Login</button>
-        <button style = "margin-left: 15px;" routerLink = "signup">Sign Up </button>
+<h1 class="welcome-title"> Welcome to Nishan's Car Rental Service </h1>
+<br />
 
-    </form>
+    <div class="container">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+            <div class="mb-1" style="text-align: center;">
+                <label for="Username" class="form-label fields">Username</label><br />
+                <input class="form-control" type="text" id="userName" formControlName="userName" placeholder="Username" style="width: 300px; margin: 0 auto;" />
+                <br /><br />
+            </div>
+
+            <div class="mb-1" style="text-align: center;">
+                <label for="Password" class="form-label fields">Password</label><br />
+                <input class="form-control" type="password" id="password" formControlName="password" placeholder="Password" style="width: 300px; margin: 0 auto;" />
+                <br /><br />
+            </div>
+
+            <div class="button-container" style="text-align: center;">
+                <button class="btn btn-primary m-3" type="submit">Login</button>
+                <button class="btn btn-success m-3" routerLink="signup">Sign Up</button>
+            </div>
+
+        </form>
+    </div>
+
+    <br /><br /><br /><br/><br/>
+
+    <div class="welcome-message-container">
+        <p class="welcome-message">Welcome to our premier car rental service! Enjoy top-quality vehicles, competitive rates, and exceptional customer service. Explore new cities or simply find a reliable ride with us. Your journey begins here!
+        </p>
+    </div>
+
 </div>

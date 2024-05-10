@@ -1,29 +1,48 @@
-<form *ngIf="customer" (ngSubmit)="saveCustomer()">
-    <label for="fullName">Full Name</label>
-    <input type="text" id="fullName" [ngModel]="customer!.fullName" (ngModelChange)="customer.fullName = $event" name="fullName" required><br>
-    <label for="email">Email</label>
-    <input type="email" id="email" [ngModel]="customer!.email" (ngModelChange)="customer.email = $event" name="email" required><br>
-    <label for="userName">Username</label>
-    <input type="text" id="userName" [ngModel]="customer!.userName" (ngModelChange)="customer.userName = $event" name="userName" required><br>
-    <label for="password">Password</label>
-    <input type="password" id="password" [ngModel]="customer!.password" (ngModelChange)="customer.password = $event" name="password" required><br>
+<div style="background-image: url('/assets/images/editCustomerDetails.jpeg');
+            background-size: cover; background-position: center; min-height: 100vh; display: flex;
+            justify-content: center; align-items: center; flex-direction: column;">
+
+<form *ngIf="customer" (ngSubmit)="saveCustomer()" class="container mt-5">
+    <div class="mb-3">
+        <label for="fullName" class="form-label fields">Full Name</label>
+        <input type="text" id="fullName" [ngModel]="customer!.fullName" (ngModelChange)="customer.fullName = $event" name="fullName" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label fields">Email</label>
+        <input type="email" id="email" [ngModel]="customer!.email" (ngModelChange)="customer.email = $event" name="email" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label for="userName" class="form-label fields">Username</label>
+        <input type="text" id="userName" [ngModel]="customer!.userName" (ngModelChange)="customer.userName = $event" name="userName" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label fields">Password</label>
+        <input type="password" id="password" [ngModel]="customer!.password" (ngModelChange)="customer.password = $event" name="password" class="form-control" required>
+    </div>
     
     <!-- Address Fields -->
-    <label for="street">Street</label>
-    <input type="text" id="street" [ngModel]="customer!.address?.street" (ngModelChange)="customer.address.street = $event" name="street" required><br>
-    
-    <label for="city">City</label>
-    <input type="text" id="city" [ngModel]="customer!.address?.city" (ngModelChange)="customer.address.city = $event" name="city" required><br>
-    
-    <label for="state">State</label>
-    <input type="text" id="state" [ngModel]="customer!.address?.state" (ngModelChange)="customer.address.state = $event" name="state" required><br>
-    
-    <label for="zip">ZIP</label>
-    <input type="text" id="zip" [ngModel]="customer!.address?.zip" (ngModelChange)="customer.address.zip = $event" name="zip" required><br>
-    
-    <label for="country">Country</label>
-    <input type="text" id="country" [ngModel]="customer!.address?.country" (ngModelChange)="customer.address.country = $event" name="country" required><br>
+    <div class="mb-3">
+        <label for="street" class="form-label fields">Street</label>
+        <input type="text" id="street" [ngModel]="customer!.address?.street" (ngModelChange)="customer.address.street = $event" name="street" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label for="city" class="form-label fields">City</label>
+        <input type="text" id="city" [ngModel]="customer!.address?.city" (ngModelChange)="customer.address.city = $event" name="city" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label for="state" class="form-label fields">State</label>
+        <input type="text" id="state" [ngModel]="customer!.address?.state" (ngModelChange)="customer.address.state = $event" name="state" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label for="zip" class="form-label fields">ZIP</label>
+        <input type="text" id="zip" [ngModel]="customer!.address?.zip" (ngModelChange)="customer.address.zip = $event" name="zip" class="form-control" required>
+    </div>
+    <div class="mb-3">
+        <label for="country" class="form-label fields">Country</label>
+        <input type="text" id="country" [ngModel]="customer!.address?.country" (ngModelChange)="customer.address.country = $event" name="country" class="form-control" required>
+    </div>
     <!-- End Address Fields -->
   
-    <button type="submit">Save</button>
+    <button type="submit" class="btn btn-primary">Save</button>
 </form>
+</div>
