@@ -1,0 +1,27 @@
+.background-image {
+    background-image: url('/assets/images/ImageReservation.jpeg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .custom-form {
+    background-color: rgba(129, 126, 126, 0.8); /* Semi-transparent white background */
+    padding: 20px; /* Add padding to the form container */
+  }
+  
+  .transparent-input {
+    background-color: transparent !important; /* Make the input box transparent */
+    border-color: white !important; /* Set border color to white */
+    color: white; /* Set text color to white */
+  }
+  
+  .fields {
+    color: white; /* Set label text color to white */
+  }
+  
+  

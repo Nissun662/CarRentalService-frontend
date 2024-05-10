@@ -32,8 +32,8 @@ export class EmpEditReservationComponent implements OnInit {
 
   deleteReservation(reservationId: number): void {
     this.reservationService.deleteReservation(reservationId).subscribe((result: string) => {
-      if(result === 'Reservation deleted successfully') {
-        alert('Reservation deleted successfully');
+      if(result === 'Reservation deleted successfully.') {
+        alert('Reservation deleted successfully.');
         this.getAllReservations();
       }
     });
